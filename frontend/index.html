@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Endee RAG Chatbot</h2>
+
+<input id="q" placeholder="Ask something..." />
+<button onclick="ask()">Ask</button>
+
+<pre id="out"></pre>
+
+<script>
+async function ask() {
+  const q = document.getElementById("q").value;
+  const res = await fetch("http://localhost:3000/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: q })
+  });
+  const data = await res.json();
+  document.getElementById("out").innerText =
+    data.context.join("\n\n");
+}
+</script>
+</body>
+</html>

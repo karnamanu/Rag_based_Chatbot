@@ -1,0 +1,4 @@
+flask
+endee
+sentence-transformers
+cd
