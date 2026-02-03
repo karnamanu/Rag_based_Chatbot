@@ -58,6 +58,30 @@ It is used only to enable smooth local testing and demonstration.
 - Full-stack integration (Frontend + Backend + AI Service)
 
 ---
+USER (Browser UI)
+   |
+   | types question
+   ↓
+FRONTEND (HTML / CSS / JS)
+   |
+   | fetch("/chat")
+   ↓
+NODE.JS BACKEND (Express)
+   |
+   | calls Flask service
+   ↓
+PYTHON AI SERVICE (Flask)
+   |
+   | 1. Convert text → embedding (ML)
+   | 2. VECTOR SEARCH (Endee)
+   | 3. Get relevant context
+   ↓
+NODE.JS BACKEND
+   |
+   | formats answer
+   ↓
+FRONTEND (shows answer)
+
 
 ## How to Run the Project
 
